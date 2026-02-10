@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supporting the Launch and Growth of Events — Welsh Lavender Farm</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --beige: #f0ebe4;
+    --beige-light: #f7f4f0;
+    --beige-mid: #e8e0d6;
+    --cream: #faf8f5;
+    --black: #1a1a1a;
+    --dark: #2d2926;
+    --gray: #6b635b;
+    --gray-light: #9a9189;
+    --white: #ffffff;
+    --accent: #c8b9a8;
+    --page-w: 210mm;
+    --page-h: 297mm;
+    --pad-x: 28mm;
+    --pad-top: 28mm;
+    --pad-bot: 24mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--beige);
+    font-family: 'Inter', sans-serif;
+    color: var(--black);
+    font-size: 10.5pt;
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: var(--page-w);
+    min-height: var(--page-h);
+    background: var(--white);
+    margin: 20px auto;
+    padding: var(--pad-top) var(--pad-x) var(--pad-bot);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ---- COVER ---- */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50mm var(--pad-x);
+  }
+  .cover-rule {
+    width: 50px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0 auto 32px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26pt;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--black);
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }
+  .cover .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 48px;
+  }
+  .cover .meta {
+    font-size: 9pt;
+    color: var(--gray-light);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 2;
+  }
+  .cover .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 10.5pt;
+    font-style: italic;
+    color: var(--gray);
+    margin-top: 48px;
+    max-width: 340px;
+    line-height: 1.7;
+  }
+
+  /* ---- TOC ---- */
+  .toc { padding-top: 42mm; }
+  .toc h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18pt;
+    font-weight: 500;
+    margin-bottom: 32px;
+    color: var(--black);
+  }
+  .toc-list { list-style: none; }
+  .toc-list li {
+    display: flex;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--beige-light);
+    font-size: 10pt;
+  }
+  .toc-list li:last-child { border-bottom: none; }
+  .toc-label {
+    color: var(--black);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted var(--beige-mid);
+    margin: 0 10px;
+    min-width: 20px;
+    position: relative;
+    top: -4px;
+  }
+  .toc-page {
+    color: var(--gray-light);
+    font-size: 9pt;
+    flex-shrink: 0;
+  }
+  .toc-section {
+    font-family: 'Playfair Display', serif;
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--black);
+    padding-top: 18px;
+    border-bottom: none !important;
+  }
+  .toc-section .toc-dots { display: none; }
+  .toc-section .toc-page { display: none; }
+
+  /* ---- CONTENT ---- */
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20pt;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  h3.section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 12pt;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 13pt;
+    font-weight: 500;
+    color: var(--black);
+    margin-top: 28px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  h4.with-italic-sub {
+    margin-bottom: 4px;
+  }
+  .italic-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: 10.5pt;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gray);
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+
+  p {
+    margin-bottom: 14px;
+    color: var(--dark);
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .emphasis-line {
+    font-style: italic;
+    color: var(--gray);
+  }
+
+  .poetic {
+    margin: 16px 0;
+    line-height: 1.9;
+    color: var(--gray);
+    font-style: italic;
+  }
+
+  ul.content-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 14px 0;
+  }
+  ul.content-list li {
+    padding: 4px 0 4px 20px;
+    position: relative;
+    color: var(--dark);
+    line-height: 1.65;
+  }
+  ul.content-list li::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  ol.numbered-list {
+    padding-left: 22px;
+    margin: 14px 0;
+  }
+  ol.numbered-list li {
+    padding: 3px 0;
+    color: var(--dark);
+    line-height: 1.65;
+  }
+
+  .section-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin: 32px 0;
+  }
+
+  .page-label {
+    position: absolute;
+    bottom: 18mm;
+    right: var(--pad-x);
+    font-size: 8pt;
+    color: var(--gray-light);
+    letter-spacing: 0.5px;
+  }
+
+  .top-label {
+    font-size: 7.5pt;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+  }
+
+  .highlight-box {
+    background: var(--beige-light);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 18px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .highlight-box p {
+    font-size: 10pt;
+    margin-bottom: 8px;
+    color: var(--dark);
+  }
+  .highlight-box p:last-child { margin-bottom: 0; }
+
+  .two-col {
+    display: flex;
+    gap: 24px;
+    margin: 14px 0;
+  }
+  .two-col .col {
+    flex: 1;
+  }
+  .two-col .col strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 9.5pt;
+    color: var(--black);
+  }
+
+  .rate-table {
+    margin: 16px 0;
+  }
+  .rate-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--beige-light);
+  }
+  .rate-row:last-child { border-bottom: none; }
+  .rate-label {
+    font-weight: 500;
+    color: var(--black);
+  }
+  .rate-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  /* ---- FINAL PAGE ---- */
+  .final-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(var(--page-h) - var(--pad-top) - var(--pad-bot));
+  }
+  .final-page p {
+    font-size: 11pt;
+    line-height: 1.85;
+    color: var(--dark);
+    max-width: 400px;
+  }
+
+  /* ---- PRINT ---- */
+  @media print {
+    body { background: white; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      page-break-after: always;
+      min-height: auto;
+      height: var(--page-h);
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="cover-rule"></div>
+  <h1>Supporting the Launch<br>and Growth of Events</h1>
+  <div class="subtitle">at Welsh Lavender Farm</div>
+  <div class="meta">
+    Prepared by Edda Pudner<br>
+    February 2026
+  </div>
+  <div class="tagline">
+    A practical proposal for building events as a sustainable, profitable revenue stream.
+  </div>
+</div>
+
+<!-- PAGE 2: TABLE OF CONTENTS -->
+<div class="page toc">
+  <h2>Contents</h2>
+  <ul class="toc-list">
+    <li class="toc-section"><span class="toc-label">Snapshot</span></li>
+    <li><span class="toc-label">What you'll find in this document</span><span class="toc-dots"></span><span class="toc-page">3</span></li>
+    <li><span class="toc-label">Quick Snapshot</span><span class="toc-dots"></span><span class="toc-page">3</span></li>
+    <li><span class="toc-label">Website and being found</span><span class="toc-dots"></span><span class="toc-page">4</span></li>
+    <li><span class="toc-label">Product clarity: what are we really selling?</span><span class="toc-dots"></span><span class="toc-page">4</span></li>
+    <li><span class="toc-label">Cost, delivery and early pressure points</span><span class="toc-dots"></span><span class="toc-page">5</span></li>
+    <li><span class="toc-label">Data: small insights that reduce guesswork</span><span class="toc-dots"></span><span class="toc-page">5</span></li>
+
+    <li class="toc-section"><span class="toc-label">Proposal</span></li>
+    <li><span class="toc-label">How I can support you — and why this approach matters</span><span class="toc-dots"></span><span class="toc-page">6</span></li>
+    <li><span class="toc-label">1. Product</span><span class="toc-dots"></span><span class="toc-page">7</span></li>
+    <li><span class="toc-label">2. Operations</span><span class="toc-dots"></span><span class="toc-page">8–9</span></li>
+    <li><span class="toc-label">3. Marketing, PR, partnerships and local presence</span><span class="toc-dots"></span><span class="toc-page">10</span></li>
+
+    <li class="toc-section"><span class="toc-label">Strategy &amp; Delivery</span></li>
+    <li><span class="toc-label">Launch &amp; Opening Strategy</span><span class="toc-dots"></span><span class="toc-page">11</span></li>
+    <li><span class="toc-label">Running events on the ground</span><span class="toc-dots"></span><span class="toc-page">12</span></li>
+
+    <li class="toc-section"><span class="toc-label">Working Together</span></li>
+    <li><span class="toc-label">How I work</span><span class="toc-dots"></span><span class="toc-page">13</span></li>
+    <li><span class="toc-label">Rates</span><span class="toc-dots"></span><span class="toc-page">13</span></li>
+    <li><span class="toc-label">Final thought</span><span class="toc-dots"></span><span class="toc-page">14</span></li>
+  </ul>
+  <span class="page-label">2</span>
+</div>
+
+<!-- PAGE 3: INTRO + QUICK SNAPSHOT -->
+<div class="page">
+  <div class="top-label">Snapshot</div>
+
+  <h2 class="section-title">What you'll find in this document</h2>
+  <div class="section-divider"></div>
+
+  <p>I've pulled together a short, practical snapshot of how the events side of the business currently presents from the outside, followed by a clear plan for how I can support you as you open and grow this new revenue stream.</p>
+
+  <p>Inside you'll find:</p>
+  <ul class="content-list">
+    <li>a friendly snapshot of the website, product and early cost considerations</li>
+    <li>a clear proposal for how I can support you across <strong>Product, Operations and Marketing</strong></li>
+    <li>a simple approach to launching the space so it creates momentum rather than pressure</li>
+    <li>how I work, and flexible ways we could collaborate</li>
+  </ul>
+
+  <p class="emphasis-line">This isn't about changing what already works.<br>It's about helping the events side grow in a way that feels intentional, sustainable and commercially sound.</p>
+
+  <div class="section-divider"></div>
+
+  <h4>Quick Snapshot</h4>
+  <p class="italic-sub">A friendly external view</p>
+
+  <p>Welsh Lavender Farm has something many venues simply can't create: a distinctive location, a strong story, and a calm, immersive setting. The barn, gardens, lavender fields, wild swimming pond and sauna together create an experience that feels considered and rare.</p>
+
+  <p>That combination is exactly why events have the potential to become a valuable and sustainable revenue stream.</p>
+
+  <p>From our conversation, it's clear the shift towards events is a thoughtful one — moving away from relying on high visitor numbers that don't always convert into income, and towards more intentional experiences that people actively choose and value.</p>
+
+  <p class="poetic">From the outside, this feels like a natural moment of transition:<br>from volume to value,<br>from casual visits to planned experiences,<br>from footfall to decision-makers.</p>
+
+  <span class="page-label">3</span>
+</div>
+
+<!-- PAGE 4: WEBSITE + PRODUCT CLARITY -->
+<div class="page">
+  <div class="top-label">Snapshot</div>
+
+  <h4 class="with-italic-sub">Website and being found</h4>
+  <div style="margin-bottom:18px;"></div>
+
+  <p>When someone discovers the farm online, the first impression is currently weighted towards skincare, retail and visits. That makes sense historically, but it does mean the events opportunity sits slightly further into the journey.</p>
+
+  <p>For organisers actively searching for an event space, that extra step can sometimes be the difference between enquiring or moving on.</p>
+
+  <p>On the <strong>Special Events</strong> page, you already communicate the right direction: board meetings, corporate events, retreats and away days, with capacity up to 30 guests, supported by optional workshops and catering. That's a strong base and gives people a sense of possibility.</p>
+
+  <p>The next step here isn't more content — it's clarity. Helping the <em>right</em> organisers understand quickly:</p>
+
+  <ul class="content-list">
+    <li>what the space is best suited for</li>
+    <li>what's realistic</li>
+    <li>and whether it's the right fit for them</li>
+  </ul>
+
+  <p>That naturally reduces back-and-forth and protects time for a small team.</p>
+
+  <div class="section-divider"></div>
+
+  <h4 class="with-italic-sub">Product clarity: what are we really selling?</h4>
+  <div style="margin-bottom:18px;"></div>
+
+  <p>In practice, "corporate events" covers very different needs.</p>
+
+  <p>Two common types come up again and again:</p>
+
+  <ul class="content-list">
+    <li><strong>Corporate meetings and strategy days</strong>, where people care about Wi-Fi, layout, privacy, timings and logistics</li>
+    <li><strong>Away days and retreats</strong>, where people care more about flow, experience, activities, food and atmosphere</li>
+  </ul>
+
+  <p>Because away days and retreats align so naturally with the farm's setting, they're a strong candidate to become the <strong>hero offer</strong> early on — supported by a small number of pre-designed formats that are easy to understand and easy to price confidently.</p>
+
+  <p>Board meetings can still sit alongside this, but they don't need to carry the whole events strategy from the start.</p>
+
+  <span class="page-label">4</span>
+</div>
+
+<!-- PAGE 5: COST + DATA -->
+<div class="page">
+  <div class="top-label">Snapshot</div>
+
+  <h4 class="with-italic-sub">Cost, delivery and early pressure points</h4>
+  <div style="margin-bottom:18px;"></div>
+
+  <p>At this stage, the biggest risk isn't lack of interest — it's underestimating the true cost and effort behind delivering events.</p>
+
+  <p>Even small events quietly include: staff time, setup and reset, cleaning, utilities, supplier coordination, risk management, and often a lot of email back-and-forth.</p>
+
+  <p>Getting three things clear early makes a huge difference:</p>
+
+  <ol class="numbered-list">
+    <li>what's included and what isn't</li>
+    <li>the real cost to deliver each type of event</li>
+    <li>a booking journey that filters enquiries before they reach your inbox</li>
+  </ol>
+
+  <p class="emphasis-line">That's what keeps events rewarding rather than draining.</p>
+
+  <div class="section-divider"></div>
+
+  <h4 class="with-italic-sub">Data: small insights that reduce guesswork</h4>
+  <div style="margin-bottom:18px;"></div>
+
+  <p>Because the events side is new, early data is incredibly useful.</p>
+
+  <p>Simple visibility on:</p>
+
+  <ul class="content-list">
+    <li>where enquiries come from</li>
+    <li>how people move through the website</li>
+    <li>which pages prompt contact</li>
+    <li>and where people hesitate</li>
+  </ul>
+
+  <p>quickly shows what's working and what needs adjusting — without overcomplicating things.</p>
+
+  <span class="page-label">5</span>
+</div>
+
+<!-- PAGE 6: PROPOSAL INTRO -->
+<div class="page">
+  <div class="top-label">Proposal</div>
+
+  <h2 class="section-title">Proposal</h2>
+  <h3 class="section-subtitle">How I can support you — and why this approach matters</h3>
+
+  <p>The events side of Welsh Lavender Farm has real potential, but it's also at a stage where small decisions can have a big impact — on time, margins, team pressure and risk.</p>
+
+  <p>My role is to help you build this side of the business with <strong>clarity rather than guesswork</strong>, so events grow as a sustainable, profitable revenue stream — not something that quietly eats time, energy or margin.</p>
+
+  <p>That's why my approach focuses on <strong>three connected areas</strong>: <strong>Product, Operations and Marketing.</strong></p>
+
+  <p class="emphasis-line">They're not separate.<br>They only work properly when they're built together.</p>
+
+  <span class="page-label">6</span>
+</div>
+
+<!-- PAGE 7: 1. PRODUCT -->
+<div class="page">
+  <div class="top-label">Proposal</div>
+
+  <h2 class="section-title">1. Product</h2>
+  <h3 class="section-subtitle">Defining the experience — and pricing it with confidence</h3>
+
+  <p>Before marketing works, and before pricing feels solid, the product itself needs clarity.</p>
+
+  <p>Here, "product" doesn't mean forcing everything into rigid packages. It means clearly defining <strong>what kind of experience you're offering</strong>, who it's best suited for, and how it's meant to be delivered.</p>
+
+  <p>At the moment, the farm can host:</p>
+  <ul class="content-list">
+    <li>board meetings and structured corporate sessions</li>
+    <li>retreats and away days</li>
+    <li>workshops and hosted experiences</li>
+  </ul>
+
+  <p>Each of these carries <strong>different expectations, costs and levels of effort</strong>.</p>
+
+  <p>Part of my role is to help you:</p>
+  <ul class="content-list">
+    <li>decide which event types to prioritise first</li>
+    <li>understand which ones are more complex to deliver</li>
+    <li>and shape the offer so it works commercially, not just creatively</li>
+  </ul>
+
+  <p>For example, <strong>predesigned away-day formats</strong> are one strong option — not because everything must be packaged, but because they:</p>
+  <ul class="content-list">
+    <li>reduce long back-and-forth with organisers</li>
+    <li>make value easier to communicate</li>
+    <li>allow pricing to be based on the <em>experience</em>, not just numbers</li>
+    <li>align naturally with the unique setting of the farm</li>
+  </ul>
+
+  <p>Crucially, pricing here doesn't come from comparing yourself to other venues or charging "per head" by default. It comes from understanding <strong>real cost + value of the space</strong>.</p>
+
+  <p>I can support you in:</p>
+  <ul class="content-list">
+    <li>mapping costs per delegate vs per group</li>
+    <li>understanding the real cost of catering, staff time, facilities, setup and reset</li>
+    <li>accounting for contracts, admin time and risk</li>
+    <li>identifying both the small and hidden costs that affect margin</li>
+  </ul>
+
+  <p>This allows pricing decisions to be made <strong>based on facts</strong>, not instinct — and adjusted confidently when needed.</p>
+
+  <span class="page-label">7</span>
+</div>
+
+<!-- PAGE 8: 2. OPERATIONS -->
+<div class="page">
+  <div class="top-label">Proposal</div>
+
+  <h2 class="section-title">2. Operations</h2>
+  <h3 class="section-subtitle">Building a clear journey, reducing risk, and protecting margins</h3>
+
+  <p>Operations is where many event businesses quietly struggle — not because demand isn't there, but because the journey from enquiry to delivery isn't clearly designed.</p>
+
+  <p>My focus here is helping you build a <strong>clear, intelligent visitor and organiser journey</strong>, from first contact through to booking, delivery and follow-up — so nothing relies on guesswork or endless back-and-forth.</p>
+
+  <p>A key part of this is how enquiries are handled.</p>
+
+  <p>Rather than everything landing as open emails, I can support you in shaping:</p>
+  <ul class="content-list">
+    <li>enquiry forms that feel <strong>thoughtful and enjoyable</strong> for the client</li>
+    <li>questions that help people clarify what they actually need</li>
+    <li>intelligent forms that give you insight before you even reply</li>
+  </ul>
+
+  <p class="emphasis-line">Good enquiry forms don't feel transactional — they feel like the beginning of the experience. At the same time, they quietly filter out unsuitable requests and save hours of admin.</p>
+
+  <p>From there, support can include:</p>
+  <ul class="content-list">
+    <li>automated but human-sounding responses that set expectations early</li>
+    <li>a clear path from enquiry → proposal → booking</li>
+    <li>reducing repetitive email conversations</li>
+    <li>making it easier for the team to prioritise the most suitable and profitable enquiries</li>
+  </ul>
+
+  <span class="page-label">8</span>
+</div>
+
+<!-- PAGE 9: OPERATIONS CONTINUED -->
+<div class="page">
+  <div class="top-label">Proposal</div>
+
+  <h4>Operations — continued</h4>
+  <div style="margin-bottom:18px;"></div>
+
+  <p>On the delivery side, I can help you build clarity around:</p>
+  <ul class="content-list">
+    <li>contracts and terms &amp; conditions that protect both the farm and visitors</li>
+    <li>deposits and payment structures that support cash flow</li>
+    <li>responsibilities, liability and cancellation scenarios</li>
+    <li>health &amp; safety considerations</li>
+    <li>post-event feedback forms and follow-up</li>
+  </ul>
+
+  <p>Clear boundaries here aren't about being rigid — they're about <strong>reducing risk</strong>, protecting margins, and avoiding situations where unclear expectations create pressure later.</p>
+
+  <div class="section-divider"></div>
+
+  <p>Training is an important part of this too. Not formal training — but practical guidance so the team:</p>
+  <ul class="content-list">
+    <li>feels confident handling enquiries</li>
+    <li>understands which clients and events are a good fit</li>
+    <li>knows how to assess effort versus return</li>
+    <li>and can make informed decisions without escalation</li>
+  </ul>
+
+  <p class="emphasis-line">This is what makes the events side resilient and scalable, not stressful.</p>
+
+  <span class="page-label">9</span>
+</div>
+
+<!-- PAGE 10: 3. MARKETING -->
+<div class="page">
+  <div class="top-label">Proposal</div>
+
+  <h2 class="section-title">3. Marketing, PR, Partnerships<br>and Local Presence</h2>
+  <h3 class="section-subtitle">Being found by the right people — and building momentum through trust</h3>
+
+  <p>Marketing only works when product and operations are clear.</p>
+
+  <p>Here, marketing isn't about "doing content" or pushing promotion. It's about <strong>who finds you, how they find you, and what they understand when they arrive</strong>.</p>
+
+  <p>Because the farm has such a strong story and setting, visibility works best when it's built through relationships, reputation, and real-world presence.</p>
+
+  <p>This is where I can add value beyond strategy. Support here can include:</p>
+  <ul class="content-list">
+    <li>refining how the events offering appears on the website and Google</li>
+    <li>ensuring organisers actively searching for retreat or away-day venues can find you</li>
+    <li>shaping a marketing approach that includes LinkedIn (for corporate and professional audiences), Google visibility, partnerships and collaborations, and networking and relationship-building</li>
+  </ul>
+
+  <p>Based in Bristol, this isn't theoretical for me. I can actively:</p>
+  <ul class="content-list">
+    <li>talk about the farm within my local and professional network</li>
+    <li>attend relevant events and make introductions</li>
+    <li>connect you with facilitators, organisers and collaborators</li>
+    <li>and help position the farm as a retreat or away-day destination within aligned sectors</li>
+  </ul>
+
+  <p>PR and visibility can also come through <strong>you and your story</strong>. There are strong opportunities for you to speak as a panellist or contributor at women-led business networks, take part in wellbeing, sustainability or founder-focused events, and share the story of the farm in spaces where people value intention and experience.</p>
+
+  <p class="emphasis-line">This isn't a hard sell. It's subtle, natural positioning — where the farm becomes an obvious place people think of when they're planning an event.</p>
+
+  <p>Data supports this work too. I can help you understand where enquiries are coming from, see which channels lead to actual bookings, track enquiry-to-booking conversion, and assess whether paid ads make sense — and if so, how clicks convert into real outcomes. This keeps marketing decisions grounded in <strong>impact</strong>, not assumptions.</p>
+
+  <span class="page-label">10</span>
+</div>
+
+<!-- PAGE 11: LAUNCH STRATEGY -->
+<div class="page">
+  <div class="top-label">Strategy &amp; Delivery</div>
+
+  <h2 class="section-title">Launch &amp; Opening Strategy</h2>
+  <h3 class="section-subtitle">Using the opening to create momentum, not pressure</h3>
+
+  <p>With the events space opening soon, the launch itself is a valuable opportunity — not just to show the space, but to shape how it is perceived from the start.</p>
+
+  <p>Rather than a simple open day, the opening can be planned as a curated, invitation-led event that introduces the farm to the <em>right</em> people and sets expectations clearly.</p>
+
+  <p>Support here can include:</p>
+  <ul class="content-list">
+    <li>defining the purpose of the launch (who it's for and why)</li>
+    <li>shaping the flow of the day so guests understand the experience</li>
+    <li>being intentional about who is invited (organisers, facilitators, partners, decision-makers)</li>
+    <li>planning how the space is used and experienced</li>
+    <li>ensuring the team knows what's happening, when, and why</li>
+  </ul>
+
+  <p>A well-planned launch can:</p>
+  <ul class="content-list">
+    <li>create early advocates and word-of-mouth</li>
+    <li>generate useful feedback and content</li>
+    <li>lead directly to future conversations and bookings</li>
+    <li>reduce the need for heavy promotion later</li>
+  </ul>
+
+  <p class="emphasis-line">The aim is to create clarity and confidence from day one — for guests and for the team.</p>
+
+  <span class="page-label">11</span>
+</div>
+
+<!-- PAGE 12: RUNNING EVENTS -->
+<div class="page">
+  <div class="top-label">Strategy &amp; Delivery</div>
+
+  <h2 class="section-title">Running Events on the Ground</h2>
+  <h3 class="section-subtitle">Why planning is what makes events calm, safe and cost-effective</h3>
+
+  <p>Alongside strategy and planning, I can also support <strong>running events on the ground</strong> where it makes sense.</p>
+
+  <p>I've delivered over <strong>300 corporate events</strong>, ranging from small leadership sessions to large-scale events of 200+ people to a royal visit and a wedding — often with very small teams, and sometimes entirely on my own.</p>
+
+  <p>That isn't about doing everything myself. It's about <strong>planning events so they don't need constant staffing, firefighting or decision-making on the day</strong>.</p>
+
+  <p>In my experience, the biggest cost and stress in events doesn't come from the event itself — it comes from poor planning. For example:</p>
+  <ul class="content-list">
+    <li>designing self-service coffee and tea stations so no one needs to stand and pour drinks</li>
+    <li>setting up catering and buffet flows that require minimal supervision</li>
+    <li>hiring equipment strategically (such as plates or glassware) and passing the cost through, rather than washing, storing and managing stock</li>
+    <li>planning alcohol service so it is largely self-managed, with staff stepping in only where needed</li>
+    <li>clearly directing guests through the day so people aren't wandering and the team always knows what's happening next</li>
+  </ul>
+
+  <p>When the flow of the day is clear — from arrival, through sessions, breaks and transitions — staffing needs drop dramatically.</p>
+
+  <p class="emphasis-line">Overstaffing often happens when an event hasn't been fully thought through. When people don't know what to do, you end up paying for uncertainty.</p>
+
+  <div class="highlight-box">
+    <p><strong>Good planning means:</strong> fewer people needed, clearer roles, calmer delivery, lower staffing costs, and a better experience for guests.</p>
+  </div>
+
+  <span class="page-label">12</span>
+</div>
+
+<!-- PAGE 13: RUNNING EVENTS CONTINUED + COMPLIANCE -->
+<div class="page">
+  <div class="top-label">Strategy &amp; Delivery</div>
+
+  <h4>Compliance, safety and responsible delivery</h4>
+  <div style="margin-bottom:18px;"></div>
+
+  <p>Health, safety and compliance are part of this planning — not an afterthought.</p>
+
+  <p>Responsible event delivery means ensuring the <strong>right roles and responsibilities</strong> are in place, including:</p>
+  <ul class="content-list">
+    <li>first aid cover where required</li>
+    <li>fire safety planning and fire marshal responsibilities</li>
+    <li>food handling requirements and appropriate certification through caterers or team members</li>
+    <li>compliant alcohol service, with clear controls and supervision</li>
+  </ul>
+
+  <p>I have previously held first aid, fire marshal and food safety training, and I also hold a <strong>personal alcohol licence</strong>, which allows me to understand and manage alcohol service responsibly within an event setting.</p>
+
+  <p>Where certifications need to be current or held by specific team members, I help plan this clearly so responsibilities are shared appropriately, the team feels supported, and the farm is protected from unnecessary risk.</p>
+
+  <p>If needed, I can:</p>
+  <ul class="content-list">
+    <li>plan the full run-of-show</li>
+    <li>brief the team clearly</li>
+    <li>direct the event on the day</li>
+    <li>and step in where experience matters most</li>
+  </ul>
+
+  <p>This allows the team to focus on hospitality and care, rather than reacting to problems.</p>
+
+  <p class="emphasis-line">When events are planned this way, they feel calm, professional and intentional — and they cost significantly less to deliver than people expect.</p>
+
+  <span class="page-label">13</span>
+</div>
+
+<!-- PAGE 14: HOW I WORK + RATES -->
+<div class="page">
+  <div class="top-label">Working Together</div>
+
+  <h2 class="section-title">How I Work</h2>
+  <div class="section-divider"></div>
+
+  <p>I work as a practical partner — friendly, direct and hands-on.</p>
+
+  <p>I don't advise from the outside and disappear. I work alongside you and your team, helping think decisions through, building the assets together, and making sure confidence and knowledge stay in the business.</p>
+
+  <p>We usually start with a simple plan of work: what matters most, what comes first, and what "done" looks like.</p>
+
+  <p>Support can include:</p>
+  <ul class="content-list">
+    <li>hands-on implementation</li>
+    <li>training and guidance</li>
+    <li>advisory sessions as a second brain</li>
+  </ul>
+
+  <p class="emphasis-line">I'm flexible, and the balance can change as the events side develops.</p>
+
+  <div class="section-divider"></div>
+
+  <h4>Consultancy, planning and advisory work</h4>
+  <div style="margin-bottom:12px;"></div>
+
+  <p>I'm happy to adapt to what feels realistic at this stage. Options include:</p>
+
+  <div class="rate-table">
+    <div class="rate-row"><span class="rate-label">Hourly</span><span class="rate-price">£60</span></div>
+    <div class="rate-row"><span class="rate-label">Half day (4 hours)</span><span class="rate-price">£220</span></div>
+    <div class="rate-row"><span class="rate-label">Full day (7 hours)</span><span class="rate-price">£330</span></div>
+  </div>
+
+  <p>If you'd rather work to a fixed budget or a small project scope, we can agree that upfront.</p>
+
+  <div class="section-divider"></div>
+
+  <h4>On-the-ground event support</h4>
+  <div style="margin-bottom:12px;"></div>
+
+  <p>Where it's helpful, I can also support by running or directing events on the day.</p>
+
+  <p>Event delivery doesn't always fit neatly into half-day or full-day blocks. Setup, arrivals, transitions and clear-down all vary depending on the event, so for this work I prefer to keep things <strong>simple and flexible</strong>.</p>
+
+  <div class="highlight-box">
+    <p>My on-the-ground event support rate is <strong>£35 per hour</strong>.</p>
+    <p>This applies to time on site, includes setup, live delivery and clear-down, includes travel time to and from Bristol, and allows us to scale support up or down depending on the event.</p>
+  </div>
+
+  <p>This approach keeps costs predictable and proportionate, while allowing the level of support to match what the event actually needs.</p>
+
+  <p>If we know in advance that an event will be particularly long or complex, we can always agree a sensible cap or estimate upfront.</p>
+
+  <span class="page-label">14</span>
+</div>
+
+<!-- PAGE 15: FINAL THOUGHT -->
+<div class="page">
+  <div class="final-page">
+    <div class="top-label">Final thought</div>
+    <div class="section-divider" style="margin-top:0;"></div>
+    <p style="margin-top:24px;">What excites me most is the potential of the space and the intention behind it.</p>
+    <p>Welsh Lavender Farm has the foundations to become somewhere people talk about, return to and recommend — not because it's loud, but because it's thoughtful, distinctive and well run.</p>
+    <p>I'd love to support you in growing the events side in a way that feels aligned, sustainable and genuinely worthwhile for you and your team.</p>
+    <div class="section-divider" style="margin-top:36px;"></div>
+    <p style="font-size:9.5pt; color:var(--gray-light); margin-top:20px;">
+      Edda Pudner<br>
+      February 2026
+    </p>
+  </div>
+  <span class="page-label">15</span>
+</div>
+
+</body>
+</html>
